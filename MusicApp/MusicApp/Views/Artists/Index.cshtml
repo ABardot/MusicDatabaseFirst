@@ -26,7 +26,7 @@
             @Html.DisplayFor(modelItem => item.ArtistName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Photo)
+           <img src="@Html.DisplayFor(modelItem => item.Photo)" class="image-create"/>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ArtistID }) |

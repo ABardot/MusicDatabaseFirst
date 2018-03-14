@@ -11,18 +11,25 @@ namespace MusicApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Album
     {
         public int AlbumID { get; set; }
+        [Display(Name = "Album Name")]
         public string AlbumName { get; set; }
+        [Display(Name = "Description")]
         public string Description { get; set; }
+        [DataType(DataType.Date)]
         public System.DateTime ReleaseDate { get; set; }
+        [Display(Name = "Photo")]
         public string Photo { get; set; }
+        [Display(Name = "Track List")]
         public string TrackList { get; set; }
+        [Display(Name = "Grammy")]
         public Nullable<bool> Grammy { get; set; }
         public int ArtistID { get; set; }
-    
+        [Display(Name = "Artist Name")]
         public virtual Artist Artist { get; set; }
     }
 }

@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.image-create {
+    height: 200px;
+}

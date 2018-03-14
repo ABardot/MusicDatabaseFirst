@@ -11,7 +11,8 @@ namespace MusicApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Artist
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,9 @@ namespace MusicApp.Models
         }
     
         public int ArtistID { get; set; }
+        [Display(Name = "Artist Name")]
         public string ArtistName { get; set; }
+        [Display(Name = "Album Photo")]
         public string Photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
