@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: grey;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,5 +25,25 @@ textarea {
 }
 
 .image-create {
-    height: 200px;
+    width: 300px;
+    padding-top: 50px;
 }
+
+.col-md-3.LeftAlbumCover {
+    height: 350px;
+    background-color: grey;
+}
+
+.col-md-9.RightAlbumCover {
+    background-color: grey;
+    height: 350px;
+}
+
+.col-md-9.RightAlbumCover h1 {
+    padding-top: 30px;
+}
+
+.col-md-12.buttonsArtist {
+    text-align: center;
+}
+

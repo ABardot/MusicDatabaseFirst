@@ -1,39 +1,90 @@
 ﻿@model IEnumerable<MusicApp.Models.Artist>
 
 @{
+    /**/
+
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Artist Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistName)
-        </td>
-        <td>
-           <img src="@Html.DisplayFor(modelItem => item.Photo)" class="image-create"/>
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArtistID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistID })
-        </td>
-    </tr>
+
+@foreach (var item in Model)
+{
+    <div class="row">
+            <div class="col-md-3 LeftAlbumCover">
+                <img src="@Html.DisplayFor(modelItem => item.Photo)" class="image-create" />
+            </div>
+            <div class="col-md-9 RightAlbumCover">
+                <h1>@Html.DisplayFor(modelItem => item.ArtistName)</h1>
+
+            </div>
+      
+    </div><!--Row End-->
+    <div class="row">
+        <div class="col-md-12 buttonsArtist">
+            <button class="button"> @Html.ActionLink("Edit", "Edit", new { id = item.ArtistID })
+            </button> 
+            <button class="button"> @Html.ActionLink("Details", "Details", new { id = item.ArtistID })
+            </button>
+            <button class="button">
+                @Html.ActionLink("Delete", "Delete", new { id = item.ArtistID })
+            </button>
+        </div>
+    </div>
+
 }
 
-</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtistName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArtistName)
+            </td>
+            <td>
+               <img src="@Html.DisplayFor(modelItem => item.Photo)" class="image-create"/>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ArtistID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ArtistID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ArtistID })
+            </td>
+        </tr>
+    }
+
+    </table>*@
