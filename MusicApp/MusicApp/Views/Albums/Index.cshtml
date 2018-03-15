@@ -9,61 +9,142 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AlbumName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrackList)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Grammy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Artist.ArtistName)
-        </th>
-        <th></th>
-    </tr>
+@foreach (var item in Model)
+{
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="@Html.DisplayFor(modelItem => item.Photo)" style="height: 300px;" />
+        </div>
+        <div class="col-md-6">
+            <img src="~/Content/images/aphex2.gif" style="height: 300px;" />
+        </div>
+    </div>
+    <div class="col-md-3 albumDescLeft">
+        <ul>
+            <li>
+                @Html.DisplayNameFor(model => model.Artist.ArtistName):
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.AlbumName):
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.Description):
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.ReleaseDate):
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.TrackList):
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-9 albumDescRight">
+        <ul>
+            <li>
+                @Html.DisplayFor(modelItem => item.Artist.ArtistName)
+            </li>
+            <li>
+                @Html.DisplayFor(modelItem => item.AlbumName)
+            </li>
+            <li>
+                @Html.DisplayFor(modelItem => item.Description)
+            </li>
+            <li>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </li>
+            <li>
+                @Html.DisplayFor(modelItem => item.TrackList)
+            </li>
+        </ul>
+    </div>
+</div><!-- col-md-12 END-->
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlbumName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReleaseDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrackList)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Grammy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Artist.ArtistName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AlbumID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AlbumID })
-        </td>
-    </tr>
+
+
+
 }
 
-</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrackList)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grammy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artist.ArtistName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AlbumName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.Photo)" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrackList)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grammy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artist.ArtistName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AlbumID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AlbumID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AlbumID })
+                </td>
+            </tr>
+        }
+
+    </table>*@
