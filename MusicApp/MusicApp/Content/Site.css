@@ -62,7 +62,7 @@ textarea {
     text-decoration: none;
 }
 
-ul {
+ul, li{
     list-style-type: none;
 }
 
@@ -77,3 +77,4 @@ ul {
     text-align: left;
     font-size: 20px;
 }
+
